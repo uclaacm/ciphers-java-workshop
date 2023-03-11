@@ -12,7 +12,7 @@ public class Solution {
 
     // =============================================================================
 
-    String alphabet = "abcdefghijklmopqrstuvwxyz";
+    String alphabet = "abcdefghijklmnopqrstuvwxyz";
 
     // =============================================================================
 
@@ -33,15 +33,13 @@ public class Solution {
         String output = "";
         for (char c : plaintext.toCharArray()){
             char adjusted = Character.toLowerCase(c);
-            for(char letter : alphabet.toCharArray()){
-                if(adjusted == letter) {
-                    int ordinal = alphabet.indexOf(adjusted);
-                    int shifted = (ordinal + shift) % alphabet.length();
-                    output += alphabet.charAt(shifted);
-                }
-                else {
-                    output += adjusted;
-                }
+            if(alphabet.indexOf(adjusted) != -1) {
+                int ordinal = alphabet.indexOf(adjusted);
+                int shifted = (ordinal + shift + alphabet.length()) % alphabet.length();
+                output += alphabet.charAt(shifted);
+            }
+            else {
+                output += adjusted;
             }
         }
         return output;
@@ -58,19 +56,17 @@ public class Solution {
      * 
      */
      
-    public String decode(String ciphertext, int shift) {
+     public String decode(String ciphertext, int shift) {
         String output = "";
         for (char c : ciphertext.toCharArray()){
             char adjusted = Character.toLowerCase(c);
-            for(char letter : alphabet.toCharArray()){
-                if(adjusted == letter) {
-                    int ordinal = alphabet.indexOf(adjusted);
-                    int shifted = (ordinal - shift) % alphabet.length();
-                    output += alphabet.charAt(shifted);
-                }
-                else {
-                    output += adjusted;
-                }
+            if(alphabet.indexOf(adjusted) != -1) {
+                int ordinal = alphabet.indexOf(adjusted);
+                int shifted = (ordinal - shift + alphabet.length()) % alphabet.length();
+                output += alphabet.charAt(shifted);
+            }
+            else {
+                output += adjusted;
             }
         }
         return output;
@@ -110,15 +106,13 @@ public class Solution {
         String output = "";
         for (char c : plaintext.toCharArray()){
             char adjusted = Character.toLowerCase(c);
-            for(char letter : big_alphabet.toCharArray()){
-                if(adjusted == letter) {
-                    int ordinal = big_alphabet.indexOf(adjusted);
-                    int shifted = (ordinal + shift) % big_alphabet.length();
-                    output += alphabet.charAt(shifted);
-                }
-                else {
-                    output += adjusted;
-                }
+            if(big_alphabet.indexOf(adjusted) != -1) {
+                int ordinal = big_alphabet.indexOf(adjusted);
+                int shifted = (ordinal + shift  + big_alphabet.length()) % big_alphabet.length();
+                output += big_alphabet.charAt(shifted);
+            }
+            else {
+                output += adjusted;
             }
         }
         return output;
@@ -134,19 +128,17 @@ public class Solution {
      * 
      */
 
-     public String big_decode(String ciphertext, int shift) {
+    public String big_decode(String ciphertext, int shift) {
         String output = "";
         for (char c : ciphertext.toCharArray()){
             char adjusted = Character.toLowerCase(c);
-            for(char letter : big_alphabet.toCharArray()){
-                if(adjusted == letter) {
-                    int ordinal = big_alphabet.indexOf(adjusted);
-                    int shifted = (ordinal - shift) % big_alphabet.length();
-                    output += alphabet.charAt(shifted);
-                }
-                else {
-                    output += adjusted;
-                }
+            if(big_alphabet.indexOf(adjusted) != -1) {
+                int ordinal = big_alphabet.indexOf(adjusted);
+                int shifted = (ordinal - shift + big_alphabet.length()) % big_alphabet.length();
+                output += big_alphabet.charAt(shifted);
+            }
+            else {
+                output += adjusted;
             }
         }
         return output;
