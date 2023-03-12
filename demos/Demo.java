@@ -29,15 +29,13 @@ public class Demo {
 
         for (char c : our_message.toCharArray()){
             char adjusted = Character.toLowerCase(c);
-            for(char letter : alphabet.toCharArray()){
-                if(adjusted == letter) {
-                    int ordinal = alphabet.indexOf(adjusted);
-                    int shifted = ordinal + 3;
-                    output += alphabet.charAt(shifted);
-                }
-                else {
-                    output += adjusted;
-                }
+            if(alphabet.indexOf(adjusted) != -1) {
+                int ordinal = alphabet.indexOf(adjusted);
+                int shifted = ordinal + 3;
+                output += alphabet.charAt(shifted);
+            }
+            else {
+                output += adjusted;
             }
         }
 
