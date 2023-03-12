@@ -10,14 +10,14 @@ The demos for the wrokshop involves showing string manipulation and conditions i
 ## Project
 The project for the workshop involves implemented a Caeser cipher encoder-decoder in Java! You can find the project [here](./project/README.md).
 
-To run the program, run the following command in the project directory:
+To compile the program to `.class` files, run the following command in the project directory root:
 ```
-java Solution.java
+javac -d . Main.java
 ```
 
-Or to compile the `.class` file, run the following command:
+To run the compiled `.class` files, run the following command in the project directory root:
 ```
-javac Solution.java
+java Main
 ```
 
 ## Authors
