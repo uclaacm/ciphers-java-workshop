@@ -85,6 +85,51 @@ public class Solution {
     public String rot13_encode_decode(String text){
         return encode(text, 13);
     }
+     
+     /*
+     * 
+     * FUNCTION #4: VINÈGERE CIPHER ENCODER. Write a function that acts as an encoder
+     * for a Vinègere Cipher! Your function should be able to encode a string,
+     * ignoring characters that do not appear in the alphabet. It should covert all
+     * upper case characters to lower case in the alphabet.
+     * 
+     */
+    
+    public static String encrypt(String text, final String key) {
+        String res = "";
+        text = text.toUpperCase();
+        for (int i = 0, j = 0; i < text.length(); i++)
+        {
+            char c = text.charAt(i);
+            if (c < 'A' || c > 'Z')
+                continue;
+            res += (char) ((c + key.charAt(j) - 2 * 'A') % 26 + 'A');
+            j = ++j % key.length();
+        }
+        return res;
+    }
+    
+    /*
+     * 
+     * FUNCTION #5: VINÈGERE CIPHER DECODER. Write a function that acts as an decoder
+     * for a Vinègere Cipher! Your function should be able to encode a string,
+     * ignoring characters that do not appear in the alphabet. It should covert all
+     * upper case characters to lower case in the alphabet.
+     * 
+     */
+    
+    public static String decrypt(String text, final String key){
+        String res = "";
+        text = text.toUpperCase();
+        for (int i = 0, j = 0; i < text.length(); i++){
+            char c = text.charAt(i);
+            if (c < 'A' || c > 'Z')
+                continue;
+            res += (char) ((c - key.charAt(j) + 26) % 26 + 'A');
+            j = ++j % key.length();
+        }
+        return res;
+    }
 
     // =============================================================================
 
