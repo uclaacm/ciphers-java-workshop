@@ -2,7 +2,7 @@
 A collaboration workshop between ACM Cyber & ACM TeachLA focusing on implementing classical ciphers in Java! The workshop was taught to high school students in TBD.
 
 ## Slides
-The slides for the workshop will be added here later.
+The slides explain Ceasar and Vigenère ciphers, along with the real-life applications of ciphers. You can find the slides [here](https://docs.google.com/presentation/d/1-bCpPzhor2Be6eFI90ioucnsveL2WCfnuERQb-hwEPU/edit?usp=sharing).
 
 ## Demos
 The demos for the wrokshop involves showing string manipulation and conditions in Java. You can find the demos [here](./demos/README.md).
