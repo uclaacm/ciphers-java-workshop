@@ -89,46 +89,55 @@ public class Solution {
      /*
      * 
      * FUNCTION #4: VINÈGERE CIPHER ENCODER. Write a function that acts as an encoder
-     * for a Vinègere Cipher! Your function should be able to encode a string,
-     * ignoring characters that do not appear in the alphabet. It should covert all
-     * upper case characters to lower case in the alphabet.
+     * for a Vinègere Cipher! Yoour function should be able to encode a string, given 
+     * a message and key. It should ignore characters that do not appear in the
+     * alphabet. It should covert allupper case characters to lower case in the 
+     * alphabet.
      * 
      */
     
-    public static String encrypt(String text, final String key) {
-        String res = "";
-        text = text.toUpperCase();
-        for (int i = 0, j = 0; i < text.length(); i++)
-        {
-            char c = text.charAt(i);
-            if (c < 'A' || c > 'Z')
-                continue;
-            res += (char) ((c + key.charAt(j) - 2 * 'A') % 26 + 'A');
-            j = ++j % key.length();
+    public String encrypt(String plaintext, final String key) {
+        String output = "";
+        int i = 0;
+        for (char c : plaintext.toCharArray()){
+            char adjusted = Character.toLowerCase(c);
+            if(alphabet.indexOf(adjusted) != -1) {
+		        int ordinal = alphabet.indexOf(adjusted);
+		        int shifted = alphabet.indexOf(key.charAt(i%key.length()));
+                i++;
+                output += alphabet.charAt((ordinal + shifted + alphabet.length()) %  alphabet.length());
+	        } else {
+		        output += adjusted;
+            }
         }
-        return res;
+        return output;
     }
     
     /*
      * 
      * FUNCTION #5: VINÈGERE CIPHER DECODER. Write a function that acts as an decoder
-     * for a Vinègere Cipher! Your function should be able to encode a string,
-     * ignoring characters that do not appear in the alphabet. It should covert all
-     * upper case characters to lower case in the alphabet.
+     * for a Vinègere Cipher! Your function should be able to decode a string, given 
+     * the encrypted message and key. It should ignore characters that do not appear 
+     * in the alphabet. It should covert allupper case characters to lower case in the 
+     * alphabet.
      * 
      */
     
-    public static String decrypt(String text, final String key){
-        String res = "";
-        text = text.toUpperCase();
-        for (int i = 0, j = 0; i < text.length(); i++){
-            char c = text.charAt(i);
-            if (c < 'A' || c > 'Z')
-                continue;
-            res += (char) ((c - key.charAt(j) + 26) % 26 + 'A');
-            j = ++j % key.length();
+    public String decrypt(String plaintext, final String key) {
+        String output = "";
+        int i = 0;
+        for (char c : plaintext.toCharArray()){
+            char adjusted = Character.toLowerCase(c);
+            if(alphabet.indexOf(adjusted) != -1) {
+		        int ordinal = alphabet.indexOf(adjusted);
+		        int shifted = alphabet.indexOf(key.charAt(i%key.length()));
+                i++;
+                output += alphabet.charAt((ordinal - shifted + alphabet.length()) %  alphabet.length());
+	        } else {
+		        output += adjusted;
+	        }
         }
-        return res;
+        return output;
     }
 
     // =============================================================================
