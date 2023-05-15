@@ -120,6 +120,8 @@ public class Solution {
      * the encrypted message and key. It should ignore characters that do not appear 
      * in the alphabet. It should covert allupper case characters to lower case in the 
      * alphabet.
+     *
+     * HINT: This can be done by changing one character of the encrypt function.
      * 
      */
     
