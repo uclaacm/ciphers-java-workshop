@@ -61,6 +61,34 @@ package project;
     public String rot13_encode_decode(String text){
         return "Implement me!";
     }
+  
+    /*
+     * 
+     * FUNCTION #4: VINÈGERE CIPHER ENCODER. Write a function that acts as an encoder
+     * for a Vinègere Cipher! Yoour function should be able to encode a string, given 
+     * a message and key. It should ignore characters that do not appear in the
+     * alphabet. It should covert allupper case characters to lower case in the 
+     * alphabet.
+     * 
+     */
+    
+    public String encrypt(String plaintext, final String key) {
+        return "Implement me!";
+    }
+  
+     /*
+     * 
+     * FUNCTION #5: VINÈGERE CIPHER DECODER. Write a function that acts as an decoder
+     * for a Vinègere Cipher! Your function should be able to decode a string, given 
+     * the encrypted message and key. It should ignore characters that do not appear 
+     * in the alphabet. It should covert allupper case characters to lower case in the 
+     * alphabet.
+     * 
+     */
+  
+     public String decrypt(String plaintext, final String key) {
+         return "Implement me!";
+     }
 
     // =============================================================================
 
