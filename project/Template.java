@@ -67,7 +67,7 @@ package project;
      * FUNCTION #4: VINÈGERE CIPHER ENCODER. Write a function that acts as an encoder
      * for a Vinègere Cipher! Yoour function should be able to encode a string, given 
      * a message and key. It should ignore characters that do not appear in the
-     * alphabet. It should covert allupper case characters to lower case in the 
+     * alphabet. It should covert all upper case characters to lower case in the 
      * alphabet.
      * 
      */
@@ -81,7 +81,7 @@ package project;
      * FUNCTION #5: VINÈGERE CIPHER DECODER. Write a function that acts as an decoder
      * for a Vinègere Cipher! Your function should be able to decode a string, given 
      * the encrypted message and key. It should ignore characters that do not appear 
-     * in the alphabet. It should covert allupper case characters to lower case in the 
+     * in the alphabet. It should covert all upper case characters to lower case in the 
      * alphabet.
      *
      * HINT: This can be done by changing one character of the encrypt function.
